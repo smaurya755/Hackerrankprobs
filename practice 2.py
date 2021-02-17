@@ -1,21 +1,14 @@
 from collections import defaultdict
 d = defaultdict(list)
-N = int(input("enter number of values1"))
-M = int(input("enter number of values2"))
-
+N,  M = map(int, input().split())
 list1 = []
-list2 = []
 for i in range(N):
-    entry1 = input()
-    list1.append(entry1)
+    d[input()].append(i+1)
 for i in range(M):
-    entry2 = input()
-    list2.append(entry2)
-for i in range(N):
-    d[list1[i]].append(i+1)
-print(d)
-for i in range(M):
-    if list2[i] in d:
-        print(list2[i])
+    list1.append(input())
+for i in list1:
+    if i in d:
+        print(" ".join(map(str, d[i])))
     else:
         print(-1)
+
